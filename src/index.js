@@ -1,6 +1,6 @@
 //index.js
 import HelloWorld from "./components/HelloWorld.vue";
-import TypeSearch from "./components/HelloWorld.vue";// 引入封装好的组件
+import TypeSearch from "./components/TypeSearch.vue";// 引入封装好的组件
 
 export { HelloWorld, TypeSearch } //实现按需引入*
 
