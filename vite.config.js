@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.js'),
-      name: 'TestBtn',
-      fileName: (format) => `test-btn.${format}.js`
+      name: 'w-design',
+      fileName: (format) => `w-design.${format}.js`
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖

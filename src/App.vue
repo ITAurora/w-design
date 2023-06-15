@@ -1,10 +1,9 @@
-<script setup lang="ts">
-import TestBtn from './components/TestBtn.vue'
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <div>
-    <TestBtn></TestBtn>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>

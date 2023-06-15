@@ -1,10 +1,10 @@
 //index.js
-import TestBtn from "./components/TestBtn.vue";// 引入封装好的组件
+import HelloWorld from "./components/HelloWorld.vue"; // 引入封装好的组件
 
-export { TestBtn } //实现按需引入*
+export { HelloWorld } //实现按需引入*
 
 
-const components = [TestBtn];
+const components = [HelloWorld];
 const install = function(App, options) {
 	components.forEach((component) => {
 		App.component(component.name,component);
