@@ -10,6 +10,7 @@
       @searchClick="searchClick"
     >
     </TypeSearch>
+    <SupplierType :typeList="typeList" v-model:activeValue="activeValue" @changeClick="changeClick"></SupplierType>
   </div>
 </template>
 <script setup>
@@ -26,11 +27,13 @@ import {
 } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import TypeSearch from "./components/TypeSearch.vue";
+import SupplierType from "./components/SupplierType.vue";
 const typeList = [
-  { name: "测试1", value: 1 },
-  { name: "测试2", value: 2 },
+  { name: "测试1", value: 0 },
+  { name: "测试2", value: 1 },
+  { name: "测试3", value: 2 }
 ];
-const activeValue = ref(1);
+const activeValue = ref(0);
 const changeClick = (event, item, index) => {
   console.log(event, item, index);
 };

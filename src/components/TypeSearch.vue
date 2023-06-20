@@ -3,11 +3,8 @@
   <div class="TypeSearch">
     <div class="SearchBox">
       <template v-for="(item, index) in typeList" :key="index + 'switchBox'">
-        <div
-          @click="change($event, item, index)"
-          class="SearchBoxOptions"
-          :class="{ SearchBoxOptionsChance: activeValue == item.value }"
-        >
+        <div @click="change($event, item, index)" class="SearchBoxOptions"
+          :class="{ SearchBoxOptionsChance: activeValue == item.value }">
           {{ item.name }}
         </div>
       </template>
@@ -15,16 +12,8 @@
     <div class="SearchContent">
       <div class="Searchinfo">
         <div class="icon">logo</div>
-        <input
-          ref="input"
-          type="text"
-          id="searchContent"
-          name="name"
-          size="40"
-          placeholder="请输入搜索内容"
-          @click="inputClick"
-          style="background-color: #fafafa"
-        />
+        <input class="input" ref="input" type="text" id="searchContent" name="name" size="40" placeholder="请输入搜索内容"
+          @click="inputClick" />
         <div class="icon">logo</div>
         <div class="iconOption" @click="search">搜索</div>
       </div>
@@ -56,7 +45,7 @@ const props = defineProps({
     },
   },
   activeValue: {
-    type: [String,Number],
+    type: [String, Number],
     default() {
       return "";
     },
@@ -85,7 +74,7 @@ const change = (event, item, index) => {
 };
 const search = (event) => {
   emits("update:searchValue", input.value.value);
-  emits("searchClick", event,input.value.value);
+  emits("searchClick", event, input.value.value);
 };
 onMounted(() => {
   input.value.value = props.searchValue;
@@ -100,10 +89,8 @@ onMounted(() => {
     display: flex;
     justify-content: left;
     align-items: center;
-    width: 100px;
 
     .SearchBoxOptions {
-      width: 50%;
       cursor: pointer;
       text-align: center;
       height: 30px;
@@ -125,6 +112,12 @@ onMounted(() => {
       display: flex;
       justify-content: left;
       align-items: center;
+
+      .input {
+        border: none;
+        outline: none;
+      }
+
       .icon {
         width: 50px;
         height: 50px;

@@ -2,37 +2,31 @@
 <template>
     <div class='SupplierType'>
         <div class="SupplierBox">
-            <template v-for="(item, index) in list" :key="index+'switchBox'">
+            <template v-for="(item, index) in typeList" :key="index+'switchBox'">
                 <div @click="change($event, item, index)" class="SearchBoxOptions"
                     :class="{ 'SearchBoxOptionsChance': activeValue == item.value }">
-                    {{ item.label }}</div>
+                    {{ item.name }}</div>
             </template>
         </div>
     </div>
 </template>
-<script setup lang='ts'>
+<script setup>
 import { reactive, shallowReactive, watch, ref, onBeforeMount, onMounted, nextTick, defineProps, defineEmits } from 'vue'
-import { Search } from '@element-plus/icons-vue'
-import { useRoute, useRouter } from 'vue-router';
-import { ElMessage, useFormItemInputId } from 'element-plus';
-import kaloneUtils from '@/utils/kaloneUtils';
-const route = useRoute();
-const router = useRouter();
 const props = defineProps({
     activeValue: {
         type: [String, Number],
         default() { return '' }
     },
-    list: {
-        type: Array<any>,
+    typeList: {
+        type: Array,
         default() { return [] }
     }
 })
-const emits = defineEmits(['update:activeValue', 'tabsChange',])
-const change = (event: any, item: any, index: any) => {
+const emits = defineEmits(['update:activeValue', 'changeClick',])
+const change = (event, item, index) => {
     // console.log(event ,item, index);
     emits('update:activeValue', item.value)
-    emits('tabsChange', event, item, index)
+    emits('changeClick', event, item, index)
 }
 </script>
 <style scoped lang='less'>
