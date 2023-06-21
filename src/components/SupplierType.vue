@@ -10,6 +10,11 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+  name: "SupplierType",
+};
+</script> 
 <script setup>
 import { reactive, shallowReactive, watch, ref, onBeforeMount, onMounted, nextTick, defineProps, defineEmits } from 'vue'
 const props = defineProps({
