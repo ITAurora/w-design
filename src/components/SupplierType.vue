@@ -36,7 +36,7 @@ const change = (event, item, index) => {
 </script>
 <style scoped lang='less'>
 .SupplierType {
-    width: 1190px;
+    width: 100%;
 
     .SupplierBox {
         display: flex;

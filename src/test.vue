@@ -10,7 +10,10 @@
       @searchClick="searchClick"
     >
     </TypeSearch>
-    <SupplierType :typeList="typeList" v-model:activeValue="activeValue" @changeClick="changeClick"></SupplierType>
+    <div style="width: 800px;">
+      <SupplierType :typeList="typeList" v-model:activeValue="activeValue" @changeClick="changeClick"></SupplierType>
+    </div>
+   
   </div>
 </template>
 <script setup>

@@ -83,7 +83,6 @@ onMounted(() => {
 <style scoped lang='less'>
 .TypeSearch {
   width: 530px;
-  margin: 25px auto 0;
 
   .SearchBox {
     display: flex;
